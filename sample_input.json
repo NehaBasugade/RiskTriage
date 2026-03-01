@@ -1,0 +1,18 @@
+{
+  "exp_id": "exp005_groupaware_final",
+  "features": {
+    "Number of Vehicles": 2,
+    "Time (24hr)": 1812,
+    "1st Road Class": 3,
+    "Road Surface": 1,
+    "Lighting Conditions": 1,
+    "Weather Conditions": 1,
+    "Type of Vehicle": 11,
+    "Casualty Class": 2,
+    "Sex of Casualty": 2,
+    "Age of Casualty": 25,
+    "Accident Date": "2014-06-15",
+    "Grid Ref: Easting": 530000,
+    "Grid Ref: Northing": 180000
+  }
+}

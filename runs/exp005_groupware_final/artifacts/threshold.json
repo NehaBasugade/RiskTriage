@@ -1,0 +1,19 @@
+{
+  "mode": "two_stage_triage_alert_rate",
+  "alert_rate_urgent": 0.35,
+  "alert_rate_review": 0.6,
+  "threshold_urgent": 0.4576883410107957,
+  "threshold_review": 0.32319670537715084,
+  "valid_pr_auc": 0.4109232861347233,
+  "valid_urgent": {
+    "precision": 0.38461538461538464,
+    "recall": 0.5714285714285714,
+    "flag_rate": 0.3501683501683502
+  },
+  "valid_review": {
+    "precision": 0.29213483146067415,
+    "recall": 0.7428571428571429,
+    "flag_rate": 0.5993265993265994
+  },
+  "exp_change": "exp002d_rare_collapse_min20_on_surface_weather_vehicle"
+}

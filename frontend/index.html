@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RiskTriage Demo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">RT</div>
+        <div class="brandText">
+          <div class="brandName">RiskTriage</div>
+          <div class="brandTag">Accident severity triage • URGENT / REVIEW / LOW</div>
+        </div>
+      </div>
+
+      <div class="topActions">
+        <button id="btnLoadExample" class="btn btnSecondary">Load Example</button>
+        <button id="btnReset" class="btn btnGhost">Reset</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="heroLeft">
+        <h1>User-friendly ML demo</h1>
+        <p>
+          A clean product style interface that calls FastAPI
+          <code>/predict</code> : inputs → score → triage decision (no manual JSON).
+        </p>
+        <div class="badges">
+          <span class="badge">FastAPI</span>
+          <span class="badge">RandomForest + ColumnTransformer</span>
+          <span class="badge">Two-threshold triage</span>
+        </div>
+      </div>
+
+      <div class="heroRight">
+        <div class="miniCard">
+          <div class="miniTitle">Latest prediction</div>
+          <div class="miniRow">
+            <span id="heroPill" class="pill low">—</span>
+            <span id="heroScore" class="miniScore">—</span>
+          </div>
+          <div id="heroHint" class="miniHint">Run a prediction to populate this.</div>
+        </div>
+      </div>
+    </section>
+
+    <main class="grid">
+      <section class="card">
+        <div class="cardHead">
+          <div>
+            <h2>Inputs</h2>
+            <p class="muted">Choose values and click Predict.</p>
+          </div>
+          <div class="apiLine">
+            <span class="muted tiny">API</span>
+            <code id="apiUrlLabel" class="codePill">http://127.0.0.1:8000/predict</code>
+          </div>
+        </div>
+
+        <form id="riskForm" class="form">
+          <div id="formFields" class="fields"></div>
+          <div class="formActions">
+            <button id="btnPredict" type="submit" class="btn btnPrimary">Predict</button>
+            <div id="status" class="status"></div>
+          </div>
+        </form>
+
+        <div class="note">
+          Tip: Location inputs are <b>Easting/Northing in meters</b>. The system converts them into privacy-safe location zones instead of storing exact points.
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="cardHead">
+          <div>
+            <h2>Result</h2>
+            <p class="muted">Score + triage level + plain-English meaning.</p>
+          </div>
+        </div>
+
+        <div id="resultEmpty" class="empty">
+          Run a prediction to see the risk score and triage level.
+        </div>
+
+        <div id="resultBox" class="result hidden">
+          <div class="resultTop">
+            <div class="triageBlock">
+              <div class="tiny muted">Triage</div>
+              <div id="triagePill" class="pill">—</div>
+            </div>
+
+            <div class="scoreBlock">
+              <div class="tiny muted">Risk score</div>
+              <div id="riskScore" class="scoreNum">—</div>
+              <div class="tiny muted">0 → low, 1 → high</div>
+            </div>
+          </div>
+
+          <div id="meaning" class="meaning"></div>
+
+          <details id="whyPanel" class="why">
+            <summary>Why?</summary>
+            <div class="tiny muted">Optional: plug in explanations later (top factors / feature importance).</div>
+            <pre id="whyJson" class="pre"></pre>
+          </details>
+
+          <div class="thresholdLine">
+            <span class="tiny muted">Thresholds (from API):</span>
+            <span id="thresholds" class="tiny">—</span>
+          </div>
+        </div>
+
+        <div id="errorBox" class="error hidden"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="tiny muted">RiskTriage demo UI + instant output</div>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
