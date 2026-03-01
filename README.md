@@ -42,7 +42,6 @@ This project treats ML as a **decision system**, not just a classifier.
 - Validation used only for threshold selection
 - Test set used only for final reporting
 
-Archived leaky experiment:
 
 🔒 Data Leakage Prevention
 - To avoid optimistic bias:
