@@ -37,23 +37,11 @@ This project treats ML as a **decision system**, not just a classifier.
 
 ## 🔒 Data Leakage Prevention
 
-- Group-aware splitting using Reference Number
-- 0% overlap between train / validation / test
-- Validation used only for threshold selection
-- Test set used only for final reporting
-
-
-🔒 Data Leakage Prevention
 - To avoid optimistic bias:
 - Group-aware splitting using Reference Number
 - 0% overlap between train, validation, and test
 - Validation used only for threshold selection
 - Test set used only for final reporting
-- Earlier row-wise experiments were archived under:
-runs/exp004_rowwise_leaky/
-- Final deployable model:
-runs/exp005_groupaware_final/
-
 
 ---
 
