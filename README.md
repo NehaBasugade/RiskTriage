@@ -215,5 +215,5 @@ It is engineered to balance missed severe cases versus alert fatigue under real-
  
 
 🔗 **API (FastAPI Endpoint)**  
-[View API Docs](https://your-api-link-here/docs)
+[View API Docs](http://localhost:8000/app/)
 
