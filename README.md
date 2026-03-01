@@ -133,6 +133,7 @@ Deployed app displays:
 ---
 
 ## 📁 Repository Structure
+```text
 
 RiskTriage/
 │
@@ -163,7 +164,7 @@ RiskTriage/
 ├── data/                        # Dataset (ignored if large)
 ├── requirements.txt             # Dependencies
 └── README.md                    # Project documentation
-
+```
 ---
 
 ## 🌐 Deployment
