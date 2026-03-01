@@ -215,8 +215,9 @@ It is engineered to balance missed severe cases versus alert fatigue under real-
 
 ## 🌐 Live Demo
 
-🔗 **Streamlit App (Hugging Face Spaces)**  
-[Open RiskTriage Demo]([https://huggingface.co/spaces/nehabasugade/risktriage-demo])
+  🔗 **Streamlit App (Hugging Face Spaces)**  
+ [Open Deployed Streamlit App](https://huggingface.co/spaces/nehabasugade/risktriage-demo)
+ 
 
 🔗 **API (FastAPI Endpoint)**  
 [View API Docs](https://your-api-link-here/docs)
