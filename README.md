@@ -123,24 +123,8 @@ Start the server:
 
 ```bash
 python -m uvicorn api.app:app --reload --port 8000Then open:
-
 Frontend UI → http://localhost:8000/app/
-
----
-
-## 🌐 Deployment
-
-Two serving modes:
-
-1. FastAPI backend
-2. Streamlit app (Hugging Face Spaces)
-
-Deployed app displays:
-- Model version
-- Decision thresholds
-- Risk probability
-- Final triage classification
-
+```
 ---
 
 ## 📁 Repository Structure
