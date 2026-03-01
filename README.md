@@ -147,42 +147,62 @@ Deployed app displays:
 
 ## 📁 Repository Structure
 
+RiskTriage/
+│
+├── src/                         # Core ML logic
+│   ├── data.py                  # Data loading & preprocessing
+│   ├── pipeline.py              # Feature pipeline definition
+│   ├── model.py                 # Model configuration
+│   ├── calibration.py           # Platt scaling implementation
+│   ├── decision.py              # Dual-threshold triage policy
+│   ├── split_check.py           # Group-aware split validation
+│   ├── evaluate.py              # Evaluation metrics (PR-AUC, etc.)
+│   ├── inference.py             # Single-case prediction logic
+│   └── train_eval_groupaware.py # Full training pipeline
+│
+├── api/                         # FastAPI backend
+│   └── app.py                   # REST inference endpoint
+│
+├── frontend/                    # HTML/CSS/JS UI
+│
+├── runs/                        # Experiment tracking & artifacts
+│   └── exp005_groupaware_final/
+│       ├── artifacts/
+│       │   ├── model.joblib
+│       │   └── threshold.json
+│       └── metrics/
+│           └── metrics_test.json
+│
+├── data/                        # Dataset (ignored if large)
+├── requirements.txt             # Dependencies
+└── README.md                    # Project documentation
 
-risktriage/
-src/ — ML logic
-api/ — FastAPI backend
-frontend/ — HTML/CSS/JS interface
-runs/ — Experiment tracking and artifacts
-README.md
-Final deployable artifacts:
-runs/exp005_groupaware_final/artifacts/model.joblib
-runs/exp005_groupaware_final/artifacts/threshold.json
-runs/exp005_groupaware_final/metrics/metrics_test.json
+---
 
-🌐 Deployment
-Two serving modes:
-FastAPI + HTML/CSS/JS (local API server)
-Streamlit deployed on Hugging Face Spaces
-The hosted version displays:
-Model version
-Decision thresholds
-Risk probability
-Final triage classification
+## 🌐 Deployment
+- Two serving modes:
+- FastAPI + HTML/CSS/JS (local API server)
+- Streamlit deployed on Hugging Face Spaces
+- The hosted version displays:
+- Model version
+- Decision thresholds
+- Risk probability
+- Final triage classification
 
 ---
 
 ## 🧪 Reproducibility
 
-Create environment:
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-Train:
-python src/train_eval_groupaware.py
-Evaluate:
-python src/evaluate.py
-Run API:
-uvicorn api.app:app --reload
+- Create environment:
+- python -m venv .venv
+- source .venv/bin/activate
+- pip install -r requirements.txt
+- Train:
+- python src/train_eval_groupaware.py
+- Evaluate:
+- python src/evaluate.py
+- Run API:
+- uvicorn api.app:app --reload
 
 ---
 
@@ -204,3 +224,12 @@ uvicorn api.app:app --reload
 RiskTriage is not optimized for accuracy.
 
 It is engineered to balance missed severe cases versus alert fatigue under real-world operational constraints.
+
+## 🌐 Live Demo
+
+🔗 **Streamlit App (Hugging Face Spaces)**  
+[Open RiskTriage Demo]([https://huggingface.co/spaces/nehabasugade/risktriage-demo])
+
+🔗 **API (FastAPI Endpoint)**  
+[View API Docs](https://your-api-link-here/docs)
+
