@@ -117,6 +117,17 @@ Only 12% of severe cases are missed.
 
 ---
 
+## 🚀 How to Run
+
+Start the server:
+
+```bash
+python -m uvicorn api.app:app --reload --port 8000Then open:
+
+Frontend UI → http://localhost:8000/app/
+
+---
+
 ## 🌐 Deployment
 
 Two serving modes:
